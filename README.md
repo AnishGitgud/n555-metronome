@@ -5,7 +5,7 @@ An analogue metronome built around the versatile NE555 timer IC. This project ut
 1x NE555 timer IC
 1x Active Buzzer
 2x 10kΩ Potentiometers
-Resistors: values mentioned in circuit diagram
+Resistors: values mentioned in the circuit diagram
 Capacitors: 68µF (timing capacitor), 10nF (control pin decoupling)
 
 In this project, the NE555 is configured as an astable multivibrator: it oscillates between high and low states indefinitely without an external trigger.
@@ -19,7 +19,7 @@ In this project, the NE555 is configured as an astable multivibrator: it oscilla
 
 Equations - incorrect
 Based on the standard NE555 formulas:
-Time High (tH): 0.693×(RA + RB)×C
+Time High (tH): 0.693×(RA + RB) × C
 Time Low (tL): 0.693×RB × C
 Total Period (T): tH + tL = 0.693 × (RA + 2RB) × C
 Frequency (f): T1 ≈ (RA + 2RB)×C 1.44
@@ -39,30 +39,11 @@ Discharge Path (tL): The capacitor discharges only through RB into the IC’s di
 
 ​
 Calculations
-To achieve a target metronome range of 30 BPM to 240 BPM, the frequency (f= 
-60
-BPM
-​
- ) must range from 0.5 Hz to 4.0 Hz
-.
-Component Selection
-Using a fixed capacitor (C) of 68µF and a small fixed resistor (R 
-A
-​
- ) of 220Ω, we calculate the necessary resistance for R 
-B
-​
- 
-:
-For 240 BPM (f≈4.0Hz): R 
-B
-​
-  needs to be approximately 2.6 kΩ
-.
-For 30 BPM (f≈0.5Hz): R 
-B
-​
-  needs to be approximately 21.2 kΩ
+To achieve a target metronome range of 30 BPM to 240 BPM, the frequency (f = 60 BPM) must range from 0.5 Hz to 4.0 Hz.
+Component Selection:
+Using a fixed capacitor (C) of 68µF and a small fixed resistor (RA) of 220Ω, we calculate the necessary resistance for RB:
+For 240 BPM (f≈4.0Hz): RB needs to be approximately 2.6 kΩ.
+For 30 BPM (f≈0.5Hz): RB needs to be approximately 21.2 kΩ
 .
 Final Implementation
 To cover this range, R 
